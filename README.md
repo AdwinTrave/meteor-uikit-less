@@ -12,58 +12,17 @@ Join our developer chat. We are online every work day between 8:00 and 18:00 UTC
 
 ## Getting started
 
-You have following options to get UIkit:
-
-- Download the [latest release](https://github.com/uikit/uikit/releases/latest)
-- Clone the repo, `git clone git://github.com/uikit/uikit.git`.
-- Install with [Bower](http://bower.io): ```bower install uikit```
-
-You find the compiled UIkit distribution in its own [repo](https://github.com/uikit/bower-uikit).
-
-## Developers
-
-First of all, install [Node](http://nodejs.org/). We use [Gulp](http://gulpjs.com) to build UIkit. If you haven't used Gulp before, you need to install the `gulp` package as a global install.
-
 ```
-npm install --global gulp
+meteor add storyteller:uikit-less
 ```
 
-If you haven't done so already, clone the UIkit git repo.
+Add the following anywhere in your client side javascript:
 
+```javascript
+Meteor.startup(function() {
+  $(document.body).attr('data-uk-observe', '1');
+});
 ```
-git clone git://github.com/uikit/uikit.git
-```
-Install the Node dependencies.
-
-```
-cd uikit
-npm install
-```
-
-Run `gulp` to lint, build and minify the release.
-
-```
-gulp [-t themename]
-```
-
-The built version of UIkit will be put in the `/dist` subdirectory. Pass a theme name parameter to only build the specified theme.
-
-### Browsersync
-
-```
-gulp sync
-```
-
-After running `gulp sync` a new browser instance will open, pointing to the uikit folder - `http://localhost:3000/`. The browser window will reload anytime you modify a source file.
-
-### Custom prefix
-
-Run gulp with your own prefix parameter ```-p``` to have all classes and JavaScript files custom prefixed.
-
-```
-gulp -p myprefix
-```
-
 
 ## Contributing
 
